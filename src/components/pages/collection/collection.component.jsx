@@ -18,6 +18,10 @@ const CollectionPage = ({ collection }) => {
           <CollectionItem key={item.id} item={item}/>
           ))}
     </div>
+    <h1>Arreglar error de css en esta pagina,
+      tiene que ver con los items, y en shop 
+      component los links hacia estas secciones
+    </h1>
   </div>
 )};
 
