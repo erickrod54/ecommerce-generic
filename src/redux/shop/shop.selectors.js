@@ -21,3 +21,18 @@ export const selectCollection = memoize((collectionUrlParam) =>
     (collections) => (collections ? collections[collectionUrlParam] : null)
   )
 );
+
+export const selectIsCollectionFetching = createSelector(
+  [selectShop],
+  shop => shop.isFetching
+);
+
+//se validara que las collections sean cargadas 'loaded'
+//se convertira este valor a bollean valiendose del
+//operador - !! (doble exclamacion es el operador)-
+export const selectIsCollectionsLoaded = createSelector(
+  [selectShop],
+  shop => !!shop.collections
+);
+//esta funcionalidad reemplaza 'selectIsCollectionFetching'
+//para hacer funcionar de nuevo el spinner
